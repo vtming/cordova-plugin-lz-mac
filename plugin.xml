@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-lz-mac" version="0.0.1">
+  <name>wyf getMAC</name>
+  <description>获取WIFI mac,获取蓝牙mac</description>
+  <license>MIT</license>
+  <author>wyf</author>
+  <keywords>蓝牙mac,WLAN mac</keywords>
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+  <js-module src="www/mac.js" name="MACmodule">
+    <clobbers target="LZmac"/>
+  </js-module>
+  
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="MAC">
+        <param name="android-package" value="com.longzheng.mac.Mac"/>
+      </feature>
+    </config-file>
+    <source-file src="src/android/Mac.java" target-dir="src/com/longzheng/mac"/>
+    <source-file src="src/android/WlanMacUtil.java" target-dir="src/com/longzheng/mac"/>
+    <source-file src="src/android/BleMacUtil.java" target-dir="src/com/longzheng/mac"/>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.BLUETOOTH" />
+      <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    </config-file>
+  </platform>
+
+</plugin>

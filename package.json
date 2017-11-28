@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-lz-mac",
+  "version": "0.0.1",
+  "description": "Cordova plugin to get Wlan mac，ble mac",
+  "cordova": {
+    "id": "cordova-plugin-lz-mac",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vtming/cordova-plugin-lz-mac.git"
+  },
+  "keywords": [
+    "cordova",
+    "cordova-android",
+    "Wlan mac",
+    "ble mac"
+  ],
+  "author": "wyf",
+  "license": "MIT"
+}

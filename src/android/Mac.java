@@ -13,16 +13,15 @@ public class Mac extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     if (action.equals("WIFI")) {
-      String wifiMAC = WlanMacUtil.getMacAddress();
+      String wifiMAC = WlanMacUtil.getMacAddress(cordova.getActivity());
       callbackContext.success(wifiMAC);
       return true;
     }
     if (action.equals("BLE")) {
-      String bleMac = BleMacUtil.getBleMac();
+      String bleMac = BleMacUtil.getBleMac(cordova.getActivity());
       callbackContext.success(bleMac);
       return true;
     }
     return false;
   }
-
 }

@@ -9,8 +9,6 @@ import android.bluetooth.BluetoothAdapter;
 public class BleMacUtil {
 
   public static String getBleMac() {
-    BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-    String mac = mBluetoothAdapter.getAddress();
-    return mac;
+    return android.provider.Settings.Secure.getString(context.getContentResolver(), "bluetooth_address");
   }
 }
